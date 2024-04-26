@@ -44,7 +44,7 @@ public class Horse {
         return hasFallen;
     }
 
-    // setters
+    // setters/mutator methods
     public void setSymbol(char newSymbol) {
         this.symbol = newSymbol;
     }
