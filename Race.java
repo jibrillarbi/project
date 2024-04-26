@@ -83,9 +83,15 @@ public class Race
             printRace();
             
             //if any of the three horses has won the race is finished
-            if ( raceWonBy(lane1Horse) || raceWonBy(lane2Horse) || raceWonBy(lane3Horse) )
-            {
+            if (raceWonBy(lane1Horse)) {
                 finished = true;
+                announceWinner(lane1Horse);
+            } else if (raceWonBy(lane2Horse)) {
+                finished = true;
+                announceWinner(lane2Horse);
+            } else if (raceWonBy(lane3Horse)) {
+                finished = true;
+                announceWinner(lane3Horse);
             }
            
             //wait for 100 milliseconds
@@ -218,5 +224,8 @@ public class Race
             System.out.print(aChar);
             i = i + 1;
         }
+    }
+    private void announceWinner(Horse winner) {
+        System.out.println("The winner is :" + winner.getName() + "!");
     }
 }
